@@ -3,7 +3,7 @@ A Simple Java Blockchain for educational purposes.
 
 This is for https://medium.com/programmers-blockchain/create-simple-blockchain-java-tutorial-from-scratch-6eeed3cb03fa tutorial. 
 
-*If you have any other questions you can message me on the (Blockchain Developers Club)[https://discord.gg/ZsyQqyk] discord server.*
+*If you have any other questions you can message me on the [Blockchain Developers Club](https://discord.gg/ZsyQqyk) discord server.*
 
 A simple Java blockchain with transactions. ( Still missing networking )
 
