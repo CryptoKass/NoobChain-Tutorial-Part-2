@@ -74,15 +74,15 @@ public class StringUtil {
 	public static String getMerkleRoot(ArrayList<Transaction> transactions) {
 		int count = transactions.size();
 		
-		ArrayList<String> previousTreeLayer = new ArrayList<String>();
+		List<String> previousTreeLayer = new ArrayList<String>();
 		for(Transaction transaction : transactions) {
 			previousTreeLayer.add(transaction.transactionId);
 		}
-		ArrayList<String> treeLayer = previousTreeLayer;
+		List<String> treeLayer = previousTreeLayer;
 		
 		while(count > 1) {
 			treeLayer = new ArrayList<String>();
-			for(int i=1; i < previousTreeLayer.size(); i++) {
+			for(int i=1; i < previousTreeLayer.size(); i+=2) {
 				treeLayer.add(applySha256(previousTreeLayer.get(i-1) + previousTreeLayer.get(i)));
 			}
 			count = treeLayer.size();
