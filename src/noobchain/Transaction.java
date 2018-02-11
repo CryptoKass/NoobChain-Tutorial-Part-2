@@ -25,7 +25,7 @@ public class Transaction {
 	
 	public boolean processTransaction() {
 		
-		if(verifiySignature() == false) {
+		if(verifySignature() == false) {
 			System.out.println("#Transaction Signature failed to verify");
 			return false;
 		}
@@ -75,7 +75,7 @@ public class Transaction {
 		signature = StringUtil.applyECDSASig(privateKey,data);		
 	}
 	
-	public boolean verifiySignature() {
+	public boolean verifySignature() {
 		String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(reciepient) + Float.toString(value)	;
 		return StringUtil.verifyECDSASig(sender, data, signature);
 	}
