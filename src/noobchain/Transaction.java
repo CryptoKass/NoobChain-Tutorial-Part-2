@@ -37,7 +37,8 @@ public class Transaction {
 
 		//Checks if transaction is valid:
 		if(getInputsValue() < NoobChain.minimumTransaction) {
-			System.out.println("Transaction Inputs to small: " + getInputsValue());
+			System.out.println("Transaction Inputs too small: " + getInputsValue());
+			System.out.println("Please enter the amount greater than " + NoobChain.minimumTransaction);
 			return false;
 		}
 		
