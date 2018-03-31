@@ -126,14 +126,16 @@ public class NoobChain {
 					tempUTXOs.put(output.id, output);
 				}
 				
-				if( currentTransaction.outputs.get(0).reciepient != currentTransaction.reciepient) {
-					System.out.println("#Transaction(" + t + ") output reciepient is not who it should be");
-					return false;
-				}
-				if( currentTransaction.outputs.get(1).reciepient != currentTransaction.sender) {
-					System.out.println("#Transaction(" + t + ") output 'change' is not sender.");
-					return false;
-				}
+				
+				//we dont need this since we verifySignature() already, the msg we signed has contains information like reciepient .
+//				if( currentTransaction.outputs.get(0).reciepient != currentTransaction.reciepient) {
+//					System.out.println("#Transaction(" + t + ") output reciepient is not who it should be");
+//					return false;
+//				}
+//				if( currentTransaction.outputs.get(1).reciepient != currentTransaction.sender) {
+//					System.out.println("#Transaction(" + t + ") output 'change' is not sender.");
+//					return false;
+//				}
 				
 			}
 			
