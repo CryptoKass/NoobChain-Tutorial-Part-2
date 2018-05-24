@@ -43,19 +43,19 @@ public class Block {
 	}
 	
 	//Add transactions to this block
-	public boolean addTransaction(Transaction transaction) {
+	public void addTransaction(Transaction transaction) throws IllegalStateException {
 		//process transaction and check if valid, unless block is genesis block then ignore.
 		if(transaction == null) return false;		
 		if((!"0".equals(previousHash))) {
 			if((transaction.processTransaction() != true)) {
 				System.out.println("Transaction failed to process. Discarded.");
-				return false;
+				throw new IllegalStateException("Transaction failed to process. Discarded.");
 			}
 		}
 
 		transactions.add(transaction);
 		System.out.println("Transaction Successfully added to Block");
-		return true;
+	
 	}
 	
 }
