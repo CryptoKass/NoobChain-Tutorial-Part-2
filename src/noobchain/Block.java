@@ -45,8 +45,8 @@ public class Block {
 	//Add transactions to this block
 	public void addTransaction(Transaction transaction) throws IllegalStateException {
 		//process transaction and check if valid, unless block is genesis block then ignore.
-		if(transaction == null) return;		
-		if((previousHash != "0")) {
+		if(transaction == null) return false;		
+		if((!"0".equals(previousHash))) {
 			if((transaction.processTransaction() != true)) {
 				System.out.println("Transaction failed to process. Discarded.");
 				throw new IllegalStateException("Transaction failed to process. Discarded.");
